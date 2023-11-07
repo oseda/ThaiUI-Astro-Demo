@@ -1,6 +1,7 @@
 ---
 const pages = await Astro.glob('../../data/about/*.md');
-const path = new URL(Astro.request.url).pathname.split('/');
+const path = new URL(Astro.request.url).pathname.replace(/\/$/, "").split('/');
+let a = new URL(Astro.request.url).pathname.replace(/\/$/, "");
 const current = path[2];
 const root = current === undefined ? true : false;
 ---
@@ -8,12 +9,12 @@ const root = current === undefined ? true : false;
 <ul>
   <li class='side-head'><h2>เกี่ยวกับเรา</h2></li>
   <li class={root && 'active'}>
-    <a href='/about'>เกี่ยวกับไทยยูไอ</a>
+    <a href='/about/'>เกี่ยวกับไทยยูไอ</a>
   </li>
   {
     pages.map((page) => (
       <li class={current === page.frontmatter.slug ? 'active' : ''}>
-        <a href={`/about/${page.frontmatter.slug}`}>{page.frontmatter.title}</a>
+        <a href={`/about/${page.frontmatter.slug}/`}>{page.frontmatter.title}</a>
       </li>
     ))
   }
