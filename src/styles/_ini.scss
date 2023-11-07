@@ -152,8 +152,10 @@ code {
 .th-container {
   width: 100%;
   max-width: var(--th-width-lg);
-  margin: 0 auto;
-  padding: 0 var(--th-gap);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--th-gap);
+  padding-right: var(--th-gap);
 }
 .width-sm {
   main.th-container {
