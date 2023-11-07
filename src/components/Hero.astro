@@ -1,0 +1,25 @@
+<div class='hero _full'>
+  <h1>🇹🇭 ThaiUI + Astro 🚀</h1>
+  <h2>ตัวอย่างโค้ดรูปแบบต่างๆ สำหรับการสร้างเว็บไซต์ภาษาไทย</h2>
+  <p>ใช้ HTML/CSS/JS จาก ThaiUI มาประกอบในโครงสร้างของ Astro web framework</p>
+</div>
+
+<style lang='scss'>
+  .hero {
+    text-align: center;
+    padding: calc(4 * var(--th-space)) var(--th-space) calc(3 * var(--th-space));
+    background: linear-gradient(180deg, #e3edfe 0%, rgba(227, 237, 254, 0) 100%);
+    margin-bottom: var(--th-space);
+    html._dark & {
+      background: linear-gradient(180deg, #111111 0%, rgba(26, 26, 26, 0) 100%);
+    }
+  }
+  h1 {
+    font-size: 3.2em;
+    margin-top: 0;
+  }
+  h2 {
+    font-size: 1.5em;
+    font-weight: normal;
+  }
+</style>

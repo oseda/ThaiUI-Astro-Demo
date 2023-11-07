@@ -1,0 +1,89 @@
+---
+
+---
+
+<button class='th-size' title='Font Size Toggle'>
+  <span class='s'>ก<small>+</small></span>
+  <span class='m'>ก<small>+</small></span>
+  <span class='l'>ก<small>-</small></span>
+</button>
+<style lang='scss'>
+  .th-size {
+    border: 0;
+    background: none;
+    line-height: 1rem;
+    color: inherit;
+    transition: 0.3s ease;
+    padding: 0;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+  }
+  .s {
+    display: flex;
+  }
+  .m,
+  .l {
+    display: none;
+  }
+  html.size-m,
+  html.size-l {
+    .s {
+      display: none;
+    }
+  }
+  html.size-l .l,
+  html.size-m .m,
+  html.size-s .s {
+    display: flex;
+  }
+  html.size-m body {
+    font-size: 22px;
+  }
+  html.size-l body {
+    font-size: 32px;
+  }
+</style>
+<script>
+  const size = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('size')) {
+      return localStorage.getItem('size');
+    }
+    return 's';
+  })();
+  const e = document.documentElement;
+  if (size === 'l') {
+    e.classList.add('size-l');
+  } else if (size === 'm') {
+    e.classList.remove('size-l');
+    e.classList.add('size-m');
+  } else {
+    e.classList.remove('size-l');
+    e.classList.remove('size-m');
+  }
+  window.localStorage.setItem('size', size);
+  const ToggleSize = () => {
+    const e = document.documentElement;
+    if (e.classList.contains('size-l')) {
+      localStorage.setItem('size', 's');
+      e.classList.remove('size-l');
+      e.classList.remove('size-m');
+    } else if (e.classList.contains('size-m')) {
+      localStorage.setItem('size', 'l');
+      e.classList.add('size-l');
+      e.classList.remove('size-m');
+    } else {
+      localStorage.setItem('size', 'm');
+      e.classList.add('size-m');
+      e.classList.remove('size-l');
+    }
+  };
+  document.querySelector('.th-size').addEventListener('click', ToggleSize);
+</script>

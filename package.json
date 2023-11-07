@@ -1,0 +1,22 @@
+{
+  "name": "thaiui-astro-starter",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/prefetch": "^0.4.1",
+    "astro": "^3.4.3",
+    "astro-iconify": "^1.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.1",
+    "sass": "^1.69.5"
+  }
+}

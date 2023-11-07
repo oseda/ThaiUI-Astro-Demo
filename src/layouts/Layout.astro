@@ -1,0 +1,10 @@
+---
+import Base from './Base.astro';
+const { title, description, bodyclass = '' } = Astro.props;
+---
+
+<Base title={title} description={description} bodyclass={bodyclass}>
+  <main id='content' class='th-container'>
+    <slot />
+  </main>
+</Base>

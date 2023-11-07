@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header1 from '../components/headers/Header1.astro';
+import Header2 from '../components/headers/Header2.astro';
+const title = 'ตัวอย่างส่วนหัว';
+const description = 'Starter Theme for Astro by Seed Webs';
+---
+
+<Layout title={title} description={description}>
+  <div class='bg-dark _full'>
+    <div class='th-container'>
+      <h1>ตัวอย่างส่วนหัว</h1>
+    </div>
+    <div class='th-sec'>
+      <Header1 />
+    </div>
+    <div class='th-sec'>
+      <Header2 />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .bg-dark {
+    background-color: var(--th-bg-dark);
+    color: #ddd;
+  }
+</style>

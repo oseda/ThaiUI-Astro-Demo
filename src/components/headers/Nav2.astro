@@ -1,0 +1,39 @@
+---
+import { Icon } from 'astro-iconify';
+const nav = [
+  { name: 'หน้าแรก', link: '/' },
+  { name: 'เกี่ยวกับเรา', link: '/about' },
+  { name: 'ตัวอย่างส่วนหัว', link: '/headers' },
+  { name: 'ตัวอย่างเนื้อหา', link: '/contents' },
+  { name: 'ตัวอย่างส่วนท้าย', link: '/footers' },
+  { name: 'บทความจาก WordPress', link: '/wordpress' },
+  { name: 'เนื้อหาจาก Notion', link: '/notion' },
+  { name: 'ตารางจาก Google Sheet', link: '/googlesheet' },
+];
+---
+
+<input type='checkbox' id='nav-open' aria-label='Toggle Mobile Menu' />
+<div class='th-nav'>
+  <div class='th-container'>
+    <label class='nav-toggle' for='nav-open'>
+      <Icon name='menu' height='24' /><span>เมนู</span>
+    </label>
+    <nav>
+      <label class='close' for='nav-open'>
+        <Icon name='close' height='24' /><span>ปิดเมนู</span>
+      </label>
+      <ul>
+        {
+          nav.map((n) => (
+            <li>
+              <a href={n.link} rel='prefetch'>
+                {n.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <label class='bg' for='nav-open'></label>
+    </nav>
+  </div>
+</div>

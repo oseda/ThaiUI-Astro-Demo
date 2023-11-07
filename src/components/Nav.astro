@@ -1,0 +1,63 @@
+---
+import { Icon } from 'astro-iconify';
+import '../styles/nav.scss';
+const nav = [
+  { name: 'หน้าแรก', link: '/' },
+  { name: 'เกี่ยวกับเรา', link: '/about' ,
+  sub: [
+      { name: 'เกี่ยวกับไทยยูไอ', link: '/about' },
+      { name: 'โครงสร้างไฟล์', link: '/about/structure' },
+      { name: 'คลาสของ CSS', link: '/about/css' },
+    ],},
+  { name: 'ตัวอย่างส่วนหัว', link: '/headers' },
+  { name: 'ตัวอย่างเนื้อหา', link: '/contents' },
+  { name: 'ตัวอย่างส่วนท้าย', link: '/footers' },
+  {
+    name: 'ตัวอย่างแหล่งข้อมูล',
+    link: '/data',
+    sub: [
+      { name: 'Basic WordPress', link: '/data/wp' },
+      { name: 'Headless WordPress', link: '/data/headless-wp' },
+      { name: 'Google Sheets', link: '/data/sheets' },
+    ],
+  },
+];
+---
+
+<input type='checkbox' id='nav-open' name='nav-open' aria-label='Toggle Mobile Menu' />
+<div class='th-nav'>
+  <div class='th-container'>
+    <label class='nav-toggle' for='nav-open'>
+      <Icon name='menu' height='24' /><span>เมนู</span>
+    </label>
+    <nav class="nav-content">
+      <label class='close' for='nav-open'>
+        <Icon name='close' height='24' /><span>ปิดเมนู</span>
+      </label>
+      <ul>
+        {
+          nav.map((n) => (
+            <li class={n.sub && ('has-sub')}>
+              <a href={n.link} rel='prefetch'>
+                {n.name}
+              </a>
+              {n.sub && (
+                <span class="i-down">
+                <Icon name="dropdown" height="10" width="10" />
+                </span>
+                <ul class='sub-menu'>
+                  {n.sub.map((s) => (
+                    <li>
+                      <a href={s.link}>{s.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+      <label class='bg' for='nav-open'></label>
+    </nav>
+  </div>
+</div>

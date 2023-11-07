@@ -1,2 +1,10 @@
 # ThaiUI-Astro-Demo
-Demo site of ThaiUI created by Astro
+Demo of ThaiUI created by Astro.
+
+[PNPm](https://pnpm.io/) is Recommended.
+
+```
+pnpm install
+```
+
+Auto deploy to https://demo.thaiui.com

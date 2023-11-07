@@ -1,0 +1,14 @@
+---
+import Base from './Base.astro';
+import '../styles/layout_sidebar.scss';
+const { title, description, bodyclass = '' } = Astro.props;
+---
+
+<Base title={title} description={description}>
+  <div class='th-container side-content'>
+    <main id='content'>
+      <slot />
+    </main>
+    <slot name='aside' />
+  </div>
+</Base>
