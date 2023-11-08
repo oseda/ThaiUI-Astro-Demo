@@ -10,27 +10,32 @@ const description = 'ตัวอย่างการนำบทความ�
   <h1>{title}</h1>
   <p>ตัวอย่างการนำบทความจากเว็บ WordPress ทั่วไปมาแสดงผ่านการเรียก <code>/wp-json/wp/v2/posts</code></p>
   <p>
-    เช่น เว็บไซต์ <strong><a href="https://seedx.seeddemo.com/" target="_blank">seedx.seeddemo.com</a></strong> เรียกข้อมูลที่
-    <code><a href="https://seedx.seeddemo.com/wp-json/wp/v2/posts" target="_blank">https://seedx.seeddemo.com/wp-json/wp/v2/posts</a></code> แล้วนำมาแสดงดังนี้
+    เช่น เว็บไซต์ <strong><a href='https://seedx.seeddemo.com/' target='_blank'>seedx.seeddemo.com</a></strong>
+     เรียกข้อมูลที่
+    <code>
+      <a href='https://seedx.seeddemo.com/wp-json/wp/v2/posts' target='_blank'>
+        https://seedx.seeddemo.com/wp-json/wp/v2/posts
+      </a>
+    </code> แล้วนำมาแสดงดังนี้
   </p>
   <hr />
   <div class='th-grid -t2 -d3'>
-  {
-    posts.slice(0,9).map((post) => (
-      <article>
-        <h2 set:html={post.title.rendered} />
-        <p set:html={post.excerpt.rendered} />
-      </article>
-    ))
-  }
+    {
+      posts.slice(0, 9).map((post) => (
+        <article>
+          <h2 set:html={post.title.rendered} />
+          <div set:html={post.excerpt.rendered} />
+        </article>
+      ))
+    }
   </div>
 </Layout>
 
 <style>
   article {
-    background-color:var(--th-bg-1);
+    background-color: var(--th-bg-1);
     box-shadow: var(--th-shadow-2);
     border-radius: var(--th-rounded-2);
-    padding: var(--th-gap);
+    padding: var(--th-gap) var(--th-gap) 6px;
   }
 </style>
