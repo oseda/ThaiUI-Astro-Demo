@@ -1,9 +1,12 @@
 ---
 import Layout from './Layout.astro';
+import '../styles/page.scss';
 const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title} description={frontmatter.description} bodyclass='width-sm'>
-  <h1>{frontmatter.title}</h1>
-  <slot />
+  <article>
+    <h1>{frontmatter.title}</h1>
+    <slot />
+  </article>
 </Layout>

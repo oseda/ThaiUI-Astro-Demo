@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Footer1 from '../../components/footers/Footer1.astro';
+import Footer2 from '../../components/footers/Footer2.astro';
+import Footer3 from '../../components/footers/Footer3.astro';
+
+const title = 'ตัวอย่างส่วนหัว';
+const description = 'Starter Theme for Astro by Seed Webs';
+---
+
+<Layout title={title} description={description}>
+  <div class='bg-dark _full'>
+    <div class='th-container'>
+      <h1>ตัวอย่างส่วนท้าย</h1>
+    </div>
+    <div class='th-sec'>
+      <Footer1 />
+    </div>
+    <div class='th-sec'>
+      <Footer2 />
+    </div>
+    <div class='th-sec'>
+      <Footer3 />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .bg-dark {
+    background-color: #000;
+    color: #ddd;
+  }
+</style>

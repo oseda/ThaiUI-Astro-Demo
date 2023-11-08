@@ -1,5 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
+import Content1 from '../../components/contents/Content1.astro';
+import Content2 from '../../components/contents/Content2.astro';
+import Content3 from '../../components/contents/Content3.astro';
 
 const title = 'ตัวอย่างส่วนหัว';
 const description = 'Starter Theme for Astro by Seed Webs';
@@ -10,6 +13,18 @@ const description = 'Starter Theme for Astro by Seed Webs';
     <div class='th-container'>
       <h1>ตัวอย่างส่วนเนื้อหา</h1>
     </div>
+  </div>
+
+  <div class='th-sec'>
+    <Content1 />
+  </div>
+
+  <div class='th-sec'>
+    <Content2 />
+  </div>
+
+  <div class='th-sec'>
+    <Content3 />
   </div>
 </Layout>
 

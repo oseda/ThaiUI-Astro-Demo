@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const { slug } = Astro.params;
+let res = await fetch(`https://i.thaiui.com/wp-json/root/v1/dessert?slug=${slug}`);
+let [post] = await res.json();
+
+export async function getStaticPaths() {
+  let data = await fetch('https://i.thaiui.com/wp-json/root/v1/dessert');
+  let posts = await data.json();
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post: post },
+  }));
+}
+
+const title = post.title;
+const description = post.excerpt;
+---
+
+<Layout title={title} description={description}>
+  <small><a href='/data/headless-wp/'>‹ Headless WordPress</a></small>
+  <article>
+    <img src={post.image} alt={post.title} />
+    <div class='content'>
+      <h1>
+        {post.title}
+      </h1>
+      <div set:html={post.content} />
+    </div>
+  </article>
+</Layout>
+
+<style lang='scss'>
+  small {
+    font-size: 1.25em;
+    display: block;
+    margin: 1.5em 0 1em;
+    font-weight: bold;
+  }
+  article {
+    background-color: var(--th-bg-1);
+    box-shadow: var(--th-shadow-2);
+    border-radius: var(--th-rounded-2);
+    border: 12px solid var(--th-bg-1);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  img {
+    border-radius: var(--th-rounded-2);
+  }
+  h1 {
+    margin: 0 0 1rem;
+  }
+  .content {
+    padding: var(--th-space);
+  }
+</style>

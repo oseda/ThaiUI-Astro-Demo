@@ -4,14 +4,20 @@ import '../styles/nav.scss';
 const nav = [
   { name: 'หน้าแรก', link: '/' },
   { name: 'เกี่ยวกับเรา', link: '/about/' ,
-  sub: [
+    sub: [
       { name: 'เกี่ยวกับไทยยูไอ', link: '/about/' },
       { name: 'โครงสร้างไฟล์', link: '/about/structure/' },
       { name: 'คลาสของ CSS', link: '/about/css/' },
-    ],},
-  { name: 'ตัวอย่างส่วนหัว', link: '/headers/' },
-  { name: 'ตัวอย่างเนื้อหา', link: '/contents/' },
-  { name: 'ตัวอย่างส่วนท้าย', link: '/footers/' },
+    ],
+  },
+  { name: 'ตัวอย่างชิ้นส่วน', link: '/element/' ,
+    sub: [
+      { name: 'ตัวอย่างส่วนหัว', link: '/element/headers/' },
+      { name: 'ตัวอย่างฟอนต์ไทย', link: '/element/fonts/' },
+      { name: 'ตัวอย่างเนื้อหา', link: '/element/contents/' },
+      { name: 'ตัวอย่างส่วนท้าย', link: '/element/footers/' },
+    ],
+  },
   {
     name: 'ตัวอย่างแหล่งข้อมูล',
     link: '/data/',

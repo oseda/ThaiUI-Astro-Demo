@@ -1,4 +1,4 @@
 {
-  "liveSassCompile.settings.excludeList": ["/**"],
+  "liveSassCompile.settings.excludeList": ["/src/**"],
   "editor.wordWrapColumn": 160
 }
