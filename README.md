@@ -1,7 +1,8 @@
 # ThaiUI-Astro-Demo
+
 Demo of ThaiUI created by Astro.
 
-[PNPm](https://pnpm.io/) is Recommended.
+[pnpm](https://pnpm.io/) is recommended.
 
 ```
 pnpm install
