@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/prefetch": "^0.4.1",
+    "@astrojs/vercel": "^5.1.0",
     "astro": "^3.4.3",
     "astro-iconify": "^1.2.0"
   },
