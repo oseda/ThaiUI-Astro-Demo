@@ -45,7 +45,9 @@ const description = post.excerpt;
     border: 12px solid var(--th-bg-1);
     overflow: hidden;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
   img {
     border-radius: var(--th-rounded-2);
