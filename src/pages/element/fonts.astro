@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import '../../styles/fonts-demo.scss';
 
 const fonts = [
   { slug: 'noto-sans-thai', en: 'Noto Sans Thai', th: 'โนโต ซานส์ ไทย' },
@@ -51,35 +52,6 @@ const description = 'Starter Theme for Astro by Seed Webs';
 </Layout>
 
 <style lang='scss'>
-  @import '/fonts/anakotmai/font.css';
-  @import '/fonts/anuphan/font.css';
-  @import '/fonts/chulabhornlikit-text/font.css';
-  @import '/fonts/cs-chatthai-ui/font.css';
-  @import '/fonts/ibm-plex-thai/font.css';
-  @import '/fonts/noto-serif-thai/font.css';
-  @import '/fonts/sarabun/font.css';
-
-  .font-anakotmai * {
-    font-family: Anakotmai, sans-serif;
-  }
-  .font-anuphan * {
-    font-family: Anuphan, sans-serif;
-  }
-  .font-chulabhornlikit-text * {
-    font-family: chulabhornlikit-text, sans-serif;
-  }
-  .font-cs-chatthai-ui * {
-    font-family: cs-chatthai-ui, sans-serif;
-  }
-  .font-ibm-plex-thai * {
-    font-family: ibm-plex-thai, sans-serif;
-  }
-  .font-noto-serif-thai * {
-    font-family: noto-serif-thai, noto-serif, sans-serif;
-  }
-  .font-sarabun * {
-    font-family: sarabun, sans-serif;
-  }
   .title {
     display: inline-block;
     padding: 0.5em 1em;
