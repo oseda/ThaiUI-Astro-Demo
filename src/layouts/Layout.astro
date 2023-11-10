@@ -1,9 +1,9 @@
 ---
 import Base from './Base.astro';
-const { title, description, bodyclass = '' } = Astro.props;
+const { title, description, bodyclass = '', cover = '/cover.png' } = Astro.props;
 ---
 
-<Base title={title} description={description} bodyclass={bodyclass}>
+<Base title={title} description={description} bodyclass={bodyclass} cover={cover}>
   <main id='content' class='th-container'>
     <slot />
   </main>

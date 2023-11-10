@@ -1,10 +1,10 @@
 ---
 import Base from './Base.astro';
 import '../styles/layout_sidebar.scss';
-const { title, description, bodyclass = '' } = Astro.props;
+const { title, description, bodyclass = '', cover = '/cover.png' } = Astro.props;
 ---
 
-<Base title={title} description={description}>
+<Base title={title} description={description} bodyclass={bodyclass} cover={cover}>
   <div class='th-container side-content'>
     <main id='content'>
       <slot />

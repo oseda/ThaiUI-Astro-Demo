@@ -15,12 +15,13 @@ export async function getStaticPaths() {
 }
 
 const title = post.title;
-const description = post.excerpt;
+const description = post.excerpt || post.content.slice(0, 100);
+const cover = post.image;
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} cover={cover}>
   <small><a href='/data/headless-wp/'>‹ Headless WordPress</a></small>
-  <article>
+  <article class='card'>
     <img src={post.image} alt={post.title} />
     <div class='content'>
       <h1>
@@ -38,7 +39,7 @@ const description = post.excerpt;
     margin: 1.5em 0 1em;
     font-weight: bold;
   }
-  article {
+  .card {
     background-color: var(--th-bg-1);
     box-shadow: var(--th-shadow-2);
     border-radius: var(--th-rounded-2);
